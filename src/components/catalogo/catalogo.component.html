@@ -1,0 +1,19 @@
+<v-content>
+    <v-layout row wrap>
+        <template v-for="(item, index) in productos">
+            <v-flex md2>
+                <v-card :key="index" max-width="190" min-height="360" @click="verDetalle">
+                    <v-img height="190" :src="item.foto"></v-img>
+                    <v-card-title>{{item.nombre}}</v-card-title>
+                    <v-card-text>
+                        <v-row align="center" class="mx-0">
+                            <v-rating :value="4.5" color="amber" dense half-increments readonly size="14"></v-rating>
+                            <div class="grey--text ml-4">{{item.puntos}}</div>
+                        </v-row>
+                        <div class="my-4 subtitle-1 black--text">$ {{item.precio}}</div>
+                    </v-card-text>
+                </v-card>
+            </v-flex>
+        </template>
+    </v-layout>
+</v-content>
